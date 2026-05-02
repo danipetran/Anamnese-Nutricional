@@ -16,7 +16,8 @@ def conectar_planilha():
     creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
     client = gspread.authorize(creds)
 
-    return client.open("AnamneseClientes").sheet1
+    #return client.open("AnamneseClientes").sheet1
+    return client.open_by_url("COLE_AQUI_O_LINK_DA_PLANILHA").sheet1
 
 st.set_page_config(page_title="Anamnese - Dani", page_icon="📋")
 
