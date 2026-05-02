@@ -154,4 +154,16 @@ expectativa = st.text_area("O que você espera do plano?")
 # BOTÃO FINAL
 # ------------------------
 if st.button("Enviar Anamnese 💛"):
-    st.success("Recebido! Em breve entrarei em contato 💛")
+
+    sheet = conectar_planilha()
+
+    sheet.append_row([
+        nome,
+        idade,
+        altura,
+        peso,
+        peso_desejado,
+        objetivo
+    ])
+
+    st.success("Recebido! 💛")
