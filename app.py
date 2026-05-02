@@ -1,5 +1,23 @@
 import streamlit as st
 
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import streamlit as st
+
+def conectar_planilha():
+    # 👇 AQUI entra o secrets
+    creds_dict = st.secrets["gcp_service_account"]
+
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+    client = gspread.authorize(creds)
+
+    return client.open("Anamnese Clientes").sheet1
+
 st.set_page_config(page_title="Anamnese - Dani", page_icon="📋")
 
 st.title("📋 Anamnese Nutricional")
