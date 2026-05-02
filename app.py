@@ -21,7 +21,7 @@ def conectar_planilha():
 st.set_page_config(page_title="Anamnese - Dani", page_icon="📋")
 
 st.title("📋 Anamnese Nutricional")
-st.markdown("Preencha com atenção para seu plano personalizado 💛")
+st.markdown("Preencha com atenção para seu plano personalizado ATUAL 💛")
 
 # ------------------------
 # DADOS PESSOAIS
