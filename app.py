@@ -17,7 +17,7 @@ def conectar_planilha():
     client = gspread.authorize(creds)
 
     #return client.open("AnamneseClientes").sheet1
-    return client.open_by_url("COLE_AQUI_O_LINK_DA_PLANILHA").sheet1
+    return client.open_by_url("https://docs.google.com/spreadsheets/d/1mDGFuicx51n6edgRvMGy09m94M0UYYY39ZfkTzHwCEc/edit?usp=sharing").sheet1
 
 st.set_page_config(page_title="Anamnese - Dani", page_icon="📋")
 
